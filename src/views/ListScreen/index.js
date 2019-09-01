@@ -30,7 +30,9 @@ export default class ListScreen extends PureComponent {
 
   getNewsArticles(offsetValue = 0) {
     this.showLoader(true);
-    Axios.get(Constants.API_GET_ARTICLES(offsetValue))
+    Axios.get(Constants.API_GET_ARTICLES(offsetValue), {
+      timeout: 2500,
+    })
       .then(response => {
         if (response && response.data && response.data.success) {
           const listData = response.data.data;
