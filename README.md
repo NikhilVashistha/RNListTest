@@ -29,7 +29,7 @@ $ react-native run-ios
 
 ### Components
 
-**App** - It is top level component contains AppNavigator.
+**App** - It is top level component contains ListScreen.
 
 **ListScreen** - It is a pure component used for showing the list of articles with some details and 3 buttons of switching modes.
 
