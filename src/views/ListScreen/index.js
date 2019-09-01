@@ -45,6 +45,15 @@ export default class ListScreen extends PureComponent {
       })
       .catch(error => {
         this.showLoader(false);
+        let errorMsg = Strings.API_ERROR_UNEXPECTED;
+        if (error.response && error.response.data) {
+          errorMsg = error.response.data.message;
+        } else if (error.code === 'ECONNABORTED') {
+          errorMsg = Strings.API_ERROR_NETWORK;
+        }
+        setTimeout(() => {
+          alert(errorMsg);
+        });
       });
   }
 
